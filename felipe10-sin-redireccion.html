@@ -27,12 +27,13 @@
       var message = encodeURIComponent("Hola, quiero más información sobre FELIPE10.");
       var appUrl = "whatsapp://send?phone=56973401188&text=" + message;
       var webUrl = "https://web.whatsapp.com/send?phone=56973401188&text=" + message;
+      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-      window.location.href = appUrl;
-
-      window.setTimeout(function () {
-        if (!document.hidden) window.location.replace(webUrl);
-      }, 500);
+      if (isMobile) {
+        window.location.replace(appUrl);
+      } else {
+        window.location.replace(webUrl);
+      }
     }());
   </script>
   <style>
@@ -44,7 +45,7 @@
     <img src="capas/02-logo-mo-energy.png" alt="MO Energy">
     <h1>Redirigiendo a WhatsApp…</h1>
     <p>Si WhatsApp no abre automáticamente, utiliza el siguiente botón.</p>
-    <a href="whatsapp://send?phone=56973401188&amp;text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20FELIPE10.">Abrir WhatsApp</a>
+    <a href="https://web.whatsapp.com/send?phone=56973401188&amp;text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20FELIPE10.">Abrir WhatsApp</a>
   </main>
 </body>
 </html>
