@@ -23,7 +23,17 @@
   <meta name="twitter:description" content="Cotiza por WhatsApp con MO Energy usando el código FELIPE10.">
   <meta name="twitter:image" content="https://disenomoenergy-glitch.github.io/Dctmoenery.github.io/capas/og-felipe10.jpg?v=3">
   <script>
-    window.location.replace("https://wa.me/56973401188?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20FELIPE10.");
+    (function () {
+      var message = encodeURIComponent("Hola, quiero más información sobre FELIPE10.");
+      var appUrl = "whatsapp://send?phone=56973401188&text=" + message;
+      var webUrl = "https://web.whatsapp.com/send?phone=56973401188&text=" + message;
+
+      window.location.href = appUrl;
+
+      window.setTimeout(function () {
+        if (!document.hidden) window.location.replace(webUrl);
+      }, 500);
+    }());
   </script>
   <style>
     *{box-sizing:border-box}body{min-height:100vh;margin:0;display:grid;place-items:center;padding:24px;color:#082d4f;background:#eef6fb;font:16px/1.5 Arial,sans-serif;text-align:center}main{width:min(100%,460px);padding:32px;border-radius:24px;background:#fff;box-shadow:0 16px 40px rgba(8,45,79,.14)}img{display:block;width:min(100%,280px);height:auto;margin:0 auto 24px}h1{margin:0 0 10px;font-size:1.55rem}p{margin:8px 0}a{display:inline-block;margin-top:16px;padding:14px 24px;border-radius:999px;color:#fff;background:#10b94a;font-weight:700;text-decoration:none}a:focus-visible{outline:4px solid #ff6500;outline-offset:4px}
@@ -34,7 +44,7 @@
     <img src="capas/02-logo-mo-energy.png" alt="MO Energy">
     <h1>Redirigiendo a WhatsApp…</h1>
     <p>Si WhatsApp no abre automáticamente, utiliza el siguiente botón.</p>
-    <a href="https://wa.me/56973401188?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20FELIPE10.">Abrir WhatsApp</a>
+    <a href="whatsapp://send?phone=56973401188&amp;text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20FELIPE10.">Abrir WhatsApp</a>
   </main>
 </body>
 </html>
